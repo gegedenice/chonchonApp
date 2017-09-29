@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>chonchonApp</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+       	<!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" />-->
+		<link rel="stylesheet" href="vendor/jquery-ui-1.11.4/jquery-ui.min.css" />
+		<link rel="stylesheet" href="vendor/jquerymobile/jquery.mobile.min.css" />
+		<link rel="stylesheet" href="vendor/waves/waves.min.css" />
+		<link rel="stylesheet" href="vendor/wow/animate.css" />
+		<link rel="stylesheet" href="css/nativedroid2.css" />
+		  <style>
+       #page,#main,#map {
+        height: 90%;
+      }
+      </style>
+		<meta name="mobile-web-app-capable" content="yes">
+	 	<meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+</head>
+	<body>
+<div data-role="page" id="page" data-fullscreen="true">
+     <div data-role="header" data-position="fixed" class="wow fadeIn" data-wow-delay="0.2s">
+       <h1 class="wow fadeIn" data-wow-delay='0.4s'>Chonchon Travel App</h1>
+     </div>
+     <div role="main" id="main" class="ui-content wow fadeIn" data-inset="false" data-wow-delay="0.2s">
+                        <label for="autocomplete" class="select"><h5>Chonchon cherche...</h5></label>
+                        <select id="autocomplete" class="select">
+                            <option value="bus_station">Un arret de bus</option>
+                            <option value="bank">Une banque</option>
+                            <option value="bar">Un bar</option>
+                            <option value="post_office">Un bureau de poste</option>
+                            <option value="library">Une biblioth&egrave;que (si si...)</option>
+                            <option value="store">Un commerce</option>
+                            <option value="dentist">Un dentiste</option>
+                            <option value="doctor">Un m&eacute;decin</option>
+                            <option value="pharmacy">Une pharmacie</option>
+                            <option value="restaurant">Un restaurant</option>
+                            <option value="subway_station">Une station de m&eacute;tro</option>
+                            <option value="taxi_stand">Une station de taxi</option>
+      </select>
+                        <div id="map"></div>
+     </div>
+    <div data-role="footer" data-position="fixed" class="wow fadeIn" data-wow-delay="0.2s">
+       <p>Copyright G&eacute;g&eacute; 2017</p>
+     </div>
+    </div>
+        <script src="vendor/jquery/jquery-2.1.4.min.js"></script>
+		<script src="vendor/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+     <script src="js/main.js"></script>
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMZfjPj0DpsRb2c_3SspVkR9T8BxmKDBM&amp;libraries=places&amp;callback=initMap" async defer></script>
+		<script src="vendor/jquerymobile/jquery.mobile-1.4.5.min.js"></script>
+		<script src="vendor/waves/waves.min.js"></script>
+		<script src="js/nativedroid2.js"></script>
+		<script src="js/nd2settings.js"></script>
+        <script src="vendor/highcharts-5.0.14/highcharts.js"></script>
+        <script src="vendor/highcharts-5.0.14/exporting.js"></script>
+	</body>
+</html>
