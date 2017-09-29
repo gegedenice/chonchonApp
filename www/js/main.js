@@ -1,16 +1,16 @@
-    var markers = [];
+       var markers = [];
       var map;
       var infowindow;
    function initMap() {
-        navigator.geolocation.getCurrentPosition(function(position) {
+        var apiGeolocationSuccess = function(position) {
             var pos = {
               lat: position.coords.latitude,
               lng: position.coords.longitude
             }
-
+console.log(pos);
         map = new google.maps.Map(document.getElementById('map'), {
           center: pos,
-          zoom: 14,
+          zoom: 17,
 
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           mapTypeControlOptions : {
@@ -51,12 +51,21 @@ function myFunction() {
           radius: 500,
           type: [x]
         }, callback); }
-         });
+         }
+         var tryAPIGeolocation = function() {
+  jQuery.post( "https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyBMZfjPj0DpsRb2c_3SspVkR9T8BxmKDBM", function(success) {
+    apiGeolocationSuccess({coords: {latitude: success.location.lat, longitude: success.location.lng}});
+  })
+  .fail(function(err) {
+    alert("API Geolocation error! \n\n"+err);
+  });
+};
+tryAPIGeolocation();
       }
 
       function callback(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
-        	DeleteMarkers()
+          DeleteMarkers()
           for (var i = 0; i < results.length; i++) {
             createMarker(results[i]);
           }
@@ -64,7 +73,7 @@ function myFunction() {
       }
 
       function createMarker(place) {
- var gpmarker = new google.maps.MarkerImage(place.icon, null, null, null, new google.maps.Size(10, 10));
+ var gpmarker = new google.maps.MarkerImage(place.icon, null, null, null, new google.maps.Size(20, 20));
         var marker = new google.maps.Marker({
           map: map,
           animation: google.maps.Animation.DROP,
