@@ -1,4 +1,4 @@
-       var markers = [];
+    var markers = [];
       var map;
       var infowindow;
    function initMap() {
@@ -7,7 +7,6 @@
               lat: position.coords.latitude,
               lng: position.coords.longitude
             }
-console.log(pos);
         map = new google.maps.Map(document.getElementById('map'), {
           center: pos,
           zoom: 17,
