@@ -11,7 +11,7 @@
 		<link rel="stylesheet" href="css/nativedroid2.css" />
 		  <style>
        #page,#main,#map {
-        height: 90%;
+        height: 100%;
       }
       </style>
 		<meta name="mobile-web-app-capable" content="yes">
@@ -21,11 +21,12 @@
 	<body>
 <div data-role="page" id="page" data-fullscreen="true">
      <div data-role="header" data-position="fixed" class="wow fadeIn" data-wow-delay="0.2s">
-       <h1 class="wow fadeIn" data-wow-delay='0.4s'>Chonchon Travel App</h1>
+       <p class="wow fadeIn" data-wow-delay='0.4s'>Chonchon Travel App</p>
      </div>
      <div role="main" id="main" class="ui-content wow fadeIn" data-inset="false" data-wow-delay="0.2s">
-                        <label for="autocomplete" class="select"><h5>Chonchon cherche...</h5></label>
+
                         <select id="autocomplete" class="select">
+                        <option value="">Chonchon cherche...</option>
                             <option value="bus_station">Un arret de bus</option>
                             <option value="bank">Une banque</option>
                             <option value="bar">Un bar</option>
@@ -42,7 +43,9 @@
                         <div id="map"></div>
      </div>
     <div data-role="footer" data-position="fixed" class="wow fadeIn" data-wow-delay="0.2s">
-       <p>Copyright G&eacute;g&eacute; 2017</p>
+    <div class="row center-xs">
+       &copy; 2017 G&eacute;g&eacute;
+     </div>
      </div>
     </div>
         <script src="vendor/jquery/jquery-2.1.4.min.js"></script>
